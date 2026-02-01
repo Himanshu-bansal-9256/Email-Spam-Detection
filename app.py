@@ -43,10 +43,10 @@ tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
 # ---------------- UI ----------------
-st.set_page_config(page_title="Spam Detector", page_icon="📧", layout="centered")
+st.set_page_config(page_title="Fraud Detector", page_icon="📧", layout="centered")
 
-st.markdown("<h1 style='text-align: center;'>📧 Email / SMS Spam Detector</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Enter a message to check whether it is Spam or Not</p>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>📧 Email / SMS Fraud Detector</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Enter a message to check whether it is Fraud or Not</p>", unsafe_allow_html=True)
 
 st.write("")
 
@@ -78,7 +78,7 @@ if st.button("🔍 Check Message"):
             st.markdown(
                 f"""
                 <div style="background-color:#ffcccc;padding:15px;border-radius:10px;">
-                <h2 style="color:#b30000;">🚫 SPAM MESSAGE</h2>
+                <h2 style="color:#b30000;">🚫 Fraud MESSAGE</h2>
                 <p><b>Spam Probability:</b> {spam_prob:.2f}%</p>
                 </div>
                 """,
@@ -90,7 +90,7 @@ if st.button("🔍 Check Message"):
             st.markdown(
                 f"""
                 <div style="background-color:#ccffcc;padding:15px;border-radius:10px;">
-                <h2 style="color:#006600;">✅ NOT SPAM</h2>
+                <h2 style="color:#006600;">✅ NOT Fraud</h2>
                 <p><b>Ham Probability:</b> {ham_prob:.2f}%</p>
                 </div>
                 """,
